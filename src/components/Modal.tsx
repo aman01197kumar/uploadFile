@@ -7,9 +7,9 @@ interface ModalProps {
 
 function Modal({ excelData, setShowModal }: ModalProps) {
   return (
-    <div className="Modal_container">
+    <div>
       <button onClick={()=>setShowModal(false)}>X</button>
-      <table className="modal__wrapper">
+      <table className="p-1 border border-3 m-3">
         <thead>
           <tr>
             {Object.keys(excelData[0] || {}).map((key) => (

@@ -47,10 +47,10 @@ function App() {
       setExcelData(data.slice(0, 10));
     }
   };
-  console.log(excelData, "ds");
+
   return (
-    <div className="App">
-      <div>
+    <div className="w-100 d-flex justify-content-center mt-4 flex-column">
+      <div className="d-flex justify-content-center">
         <input
           type="file"
           onChange={handleChange}
@@ -58,34 +58,36 @@ function App() {
           accept="text/csv,xlsx"
         />
         <button onClick={onSubmitHandler}>Upload</button>
-        {showSucessMessage ? (
+      </div>
+      {showSucessMessage ? (
+        <div className="w-100 d-flex align-items-center justify-content-center">
           <div
-            className="alert alert-success text-center mt-1 d-flex justify-content-center"
+            className="alert alert-success text-center mt-1 w-50"
             role="alert"
           >
             File Uploaded Successfully!!
           </div>
-        ) : null}
-        {selectedFileName && excelData ? (
-          <div className="d-flex justify-content-evenly">
-            <p>{selectedFileName}</p>
-            <button
-              onClick={() => {
-                setShowModal(true);
-                setShowSuccessMessage(false);
-              }}
-            >
-              Preview Data
-            </button>
-          </div>
-        ) : (
-          <div>Nothing to preview</div>
-        )}
-        <div>
-          {showModal && excelData ? (
-            <Modal excelData={excelData} setShowModal={setShowModal} />
-          ) : null}
         </div>
+      ) : null}
+      {selectedFileName && excelData ? (
+        <div className="d-flex w-100 justify-content-center mt-3">
+          <div className="p-3">{selectedFileName}</div>
+          <button
+            onClick={() => {
+              setShowModal(true);
+              setShowSuccessMessage(false);
+            }}
+          >
+            Preview Data
+          </button>
+        </div>
+      ) : (
+        <div className="text-center">Nothing to preview</div>
+      )}
+      <div>
+        {showModal && excelData ? (
+          <Modal excelData={excelData} setShowModal={setShowModal} />
+        ) : null}
       </div>
     </div>
   );
