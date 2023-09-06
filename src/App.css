@@ -1,0 +1,28 @@
+.App {
+  /* width: 100%;
+  display: flex;
+  justify-content: center; */
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 9rem;
+}
+
+.modal__wrapper {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem;
+  position: relative;
+}
+.closeBtnHanndler {
+  position: absolute;
+  left: 2rem;
+  padding: 0.5rem 1rem;
+  /* border: 1px solid; */
+  /* border-radius: 100%; */
+  top: 10.5rem;
+  background: repeat;
+  font-weight: 800;
+  /* cursor: pointer; */
+}
